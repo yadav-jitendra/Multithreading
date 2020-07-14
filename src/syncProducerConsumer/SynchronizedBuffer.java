@@ -5,7 +5,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class SynchronizedBuffer implements Buffer{
-    private Lock accessLock = new ReentrantLock();
+    private Lock accessLock = new ReentrantLock();  // ReentrantLock is implemented class of Lock
 
     private Condition canWrite = accessLock.newCondition();
     private Condition canRead = accessLock.newCondition();
