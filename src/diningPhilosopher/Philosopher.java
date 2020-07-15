@@ -1,8 +1,8 @@
 package diningPhilosopher;
 
-public class Philosopher extends Thread{
-    private Table table;
-    private int place;
+public class Philosopher extends Thread {
+    private final Table table;
+    private final int place;
 
     public Philosopher(Table table, int place) {
         this.table = table;
@@ -10,8 +10,8 @@ public class Philosopher extends Thread{
         start();
     }
 
-    public void run(){
-        while (true){
+    public void run() {
+        while (true) {
             think();
             table.takeFork(place);
             eat();
@@ -20,7 +20,7 @@ public class Philosopher extends Thread{
     }
 
     private void eat() {
-        System.out.println("Philosopher "+place+ " started eating");
+        System.out.println("Philosopher " + place + " started eating");
         try {
             sleep((long) (Math.random()*20000));
         } catch (InterruptedException e) {

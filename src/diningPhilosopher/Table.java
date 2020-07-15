@@ -1,16 +1,16 @@
 package diningPhilosopher;
 
+import java.util.Arrays;
+
 public class Table {
-    private boolean[] usedFork;
+    private final boolean[] usedFork;
 
     public Table(int anzahl) {
         usedFork = new boolean[anzahl];
-        for(int i= 0; i<usedFork.length; i++){
-            usedFork[i] = false;
-        }
+        Arrays.fill(usedFork, false);
     }
 
-    private int leftSide(int i){
+    private int leftSide(int i) {
         return i;
     }
 
